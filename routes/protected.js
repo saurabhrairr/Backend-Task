@@ -4,6 +4,9 @@ const router = express.Router();
 const authMiddleware = require('../middleware/authMiddleware');
 const User = require('../models/User');
 
+
+
+// for authMiddleware added to protect route also get all userdetails
 router.get('/protected-route', authMiddleware, async (req, res) => {
     try {
         const user = await User.find();
