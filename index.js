@@ -9,7 +9,7 @@ require('dotenv').config();
 app.use(express.json());
 app.use(express.urlencoded({ extended:false }));
 
-
+// database configuration
 mongoose.connect("mongodb://localhost:27017/userdetail", {
    useNewUrlParser: true,
    useUnifiedTopology: true
@@ -21,7 +21,7 @@ app.use('/protected', protectedRoutes);
 
 
 
-
+// port number to connect to (default)
 const PORT = process.env.PORT || 3000; 
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
